@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Input(props) {
   return (
@@ -49,33 +50,37 @@ const MyProfile = () => {
         }}
       >
         <img src="images/chat.png" alt="chat" className="rounded-t-[10px] " />
-        <div className="flex justify-center mt-[16rem] ">
-          <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
-            <svg
-              width="29"
-              height="28"
-              viewBox="0 0 29 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse
-                id="Ellipse 3"
-                cx="14.5"
-                cy="14"
-                rx="14.5"
-                ry="14"
-                fill="white"
-              />
-            </svg>
-            <p className="text-white text-[9px] ">Profile</p>
+        <Link to={"/profile"}>
+          <div className="flex justify-center mt-[16rem] ">
+            <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
+              <svg
+                width="29"
+                height="28"
+                viewBox="0 0 29 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse
+                  id="Ellipse 3"
+                  cx="14.5"
+                  cy="14"
+                  rx="14.5"
+                  ry="14"
+                  fill="white"
+                />
+              </svg>
+              <p className="text-white text-[9px] ">Profile</p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center mt-20 mb-2 ">
-          <img src="images/logout.png" alt="logout" className="w-[46px] " />
-          <a href="#" className="text-white text-[10px] ">
-            Logout
-          </a>
-        </div>
+        </Link>
+        <Link to={"/login"}>
+          <div className="flex flex-col items-center mt-20 mb-2 ">
+            <img src="images/logout.png" alt="logout" className="w-[46px] " />
+            <a href="#" className="text-white text-[10px] ">
+              Logout
+            </a>
+          </div>
+        </Link>
       </div>
       <div className="bg-white w-[450px] rounded-[10px] my-4 ">
         <div className="flex pl-4 pt-4">
@@ -111,13 +116,15 @@ const MyProfile = () => {
       </div>
       <div className="bg-white w-[650px] rounded-[10px] my-4 mr-4 ">
         <div className=" ">
-          <div className="flex justify-center  ">
-            <img
-              src="/images/chatMsg.png"
-              alt="PieChat"
-              className="rounded-[30px] mt-20"
-            />
-          </div>
+          <Link to={"/chat"}>
+            <div className="flex justify-center  ">
+              <img
+                src="/images/chatMsg.png"
+                alt="PieChat"
+                className="rounded-[30px] mt-20"
+              />
+            </div>
+          </Link>
           <h1 className="text-center text-black text-[35px] leading-[29px] font-[800] mb-8 mt-20 ">
             PieChat
           </h1>

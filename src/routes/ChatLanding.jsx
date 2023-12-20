@@ -1,5 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Input(props) {
   return (
@@ -31,59 +33,69 @@ const ChatLanding = () => {
         }}
       >
         <img src="images/chat.png" alt="chat" className="rounded-t-[10px] " />
-        <div className="flex justify-center mt-[16rem] ">
-          <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
-            <svg
-              width="29"
-              height="28"
-              viewBox="0 0 29 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse
-                id="Ellipse 3"
-                cx="14.5"
-                cy="14"
-                rx="14.5"
-                ry="14"
-                fill="white"
-              />
-            </svg>
-            <p className="text-white text-[9px] ">Profile</p>
+        <Link to={"/profile"}>
+          <div className="flex justify-center mt-[16rem] ">
+            <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
+              <svg
+                width="29"
+                height="28"
+                viewBox="0 0 29 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse
+                  id="Ellipse 3"
+                  cx="14.5"
+                  cy="14"
+                  rx="14.5"
+                  ry="14"
+                  fill="white"
+                />
+              </svg>
+              <p className="text-white text-[9px] ">Profile</p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center mt-20 mb-2 ">
-          <img src="images/logout.png" alt="logout" className="w-[46px] " />
-          <a href="#" className="text-white text-[10px] ">
-            Logout
-          </a>
-        </div>
+        </Link>
+        <Link to={"/login"}>
+          <div className="flex flex-col items-center mt-20 mb-2 ">
+            <img src="images/logout.png" alt="logout" className="w-[46px] " />
+            <a href="#" className="text-white text-[10px] ">
+              Logout
+            </a>
+          </div>
+        </Link>
       </div>
       <div className="bg-white w-[450px] rounded-[10px] my-4 ">
         <div className="flex justify-between p-4 ">
           <h2 className="text-black text-[18px] font-[800] ml-2">Chat</h2>
-          <img src="images/edit.png" alt="edit" className="w-8" />
+          <FaRegEdit className="cursor-pointer" />
         </div>
         <div className="flex justify-center">
           <Input value={search} onChange={handleSearchChange} />
         </div>
-        <div className="flex items-center ml-5 mt-2">
-          <img src="images/logo.png" alt="logo" />
-          <div className="ml-2">
-            <h4 className="text-black text-[15px] font-[800]">Pie Chat</h4>
-            <p className="text-[rgba(0,0,0,0.32)] text-[10px]">How are you doing?</p>
+        <Link to={"/chating"}>
+          <div className="flex items-center ml-5 mt-2">
+            <img src="images/logo.png" alt="logo" />
+            <div className="ml-2">
+              <h4 className="text-black text-[15px] font-[800]">Pie Chat</h4>
+              <p className="text-[rgba(0,0,0,0.32)] text-[10px]">
+                How are you doing?
+              </p>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
       <div className="bg-white w-[650px] rounded-[10px] my-4 mr-4 ">
-        <div className=" ">
-          <div className="flex justify-center  ">
-            <img
-              src="/images/chatMsg.png"
-              alt="PieChat"
-              className="rounded-[30px] mt-20"
-            />
-          </div>
+        <div className="">
+          <Link to={"/chating"}>
+            <div className="flex justify-center  ">
+              <img
+                src="/images/chatMsg.png"
+                alt="PieChat"
+                className="rounded-[30px] mt-20"
+              />
+            </div>
+          </Link>
           <h1 className="text-center text-black text-[35px] leading-[29px] font-[800] mb-8 mt-20 ">
             PieChat
           </h1>

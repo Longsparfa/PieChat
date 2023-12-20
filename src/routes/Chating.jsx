@@ -1,6 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react";
 import ChatApp from "../coponents/ChatApp";
+import Toggle from "../coponents/Toggle";
+import { FaRegEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Input(props) {
   return (
@@ -32,38 +35,42 @@ const Chating = () => {
         }}
       >
         <img src="images/chat.png" alt="chat" className="rounded-t-[10px] " />
-        <div className="flex justify-center mt-[16rem] ">
-          <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
-            <svg
-              width="29"
-              height="28"
-              viewBox="0 0 29 28"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <ellipse
-                id="Ellipse 3"
-                cx="14.5"
-                cy="14"
-                rx="14.5"
-                ry="14"
-                fill="white"
-              />
-            </svg>
-            <p className="text-white text-[9px] ">Profile</p>
+        <Link to={"/profile"}>
+          <div className="flex justify-center mt-[16rem] ">
+            <div className="flex flex-col items-center justify-center w-[46px] h-[58px] bg-[rgba(217,217,217,0.63)] ">
+              <svg
+                width="29"
+                height="28"
+                viewBox="0 0 29 28"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <ellipse
+                  id="Ellipse 3"
+                  cx="14.5"
+                  cy="14"
+                  rx="14.5"
+                  ry="14"
+                  fill="white"
+                />
+              </svg>
+              <p className="text-white text-[9px] ">Profile</p>
+            </div>
           </div>
-        </div>
-        <div className="flex flex-col items-center mt-20 mb-2 ">
-          <img src="images/logout.png" alt="logout" className="w-[46px] " />
-          <a href="#" className="text-white text-[10px] ">
-            Logout
-          </a>
-        </div>
+        </Link>
+        <Link to={"/login"}>
+          <div className="flex flex-col items-center mt-20 mb-2 ">
+            <img src="images/logout.png" alt="logout" className="w-[46px] " />
+            <a href="#" className="text-white text-[10px] ">
+              Logout
+            </a>
+          </div>
+        </Link>
       </div>
       <div className="bg-white w-[450px] rounded-[10px] my-4 ">
         <div className="flex justify-between p-4 ">
           <h2 className="text-black text-[18px] font-[800] ml-2">Chat</h2>
-          <img src="images/edit.png" alt="edit" className="w-8" />
+          <FaRegEdit className="cursor-pointer" />
         </div>
         <div className="flex justify-center">
           <Input value={search} onChange={handleSearchChange} />
@@ -80,16 +87,20 @@ const Chating = () => {
       </div>
       <div className="bg-white w-[650px] rounded-[10px] my-4 mr-4 ">
         <div className="flex items-center justify-between p-4 ">
-          <div className="flex">
-            <img src="images/logo.png" alt="logo" />
-            <h4 className="text-black text-[15px] font-[700] ml-2">Pie Chat</h4>
-          </div>
-          <img src="images/dot3.png" alt="" />
+          <Link to={"/"}>
+            <div className="flex">
+              <img src="images/logo.png" alt="logo" />
+              <h4 className="text-black text-[15px] font-[700] ml-2">
+                Pie Chat
+              </h4>
+            </div>
+          </Link>
+          <Toggle />
         </div>
         <div className="bg-[rgba(0,0,0,0.13)] h-[1px] w-[604px] ml-6  " />
-      <div>
-      <ChatApp />
-      </div>
+        <div>
+          <ChatApp />
+        </div>
       </div>
     </div>
   );

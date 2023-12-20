@@ -1,18 +1,18 @@
-// import Home from "./routes/Home"
-// import LoginPage from "./routes/Login";
-// import MyProfile from "./routes/MyProfile";
-// import ChatLanding from "./routes/ChatLanding";
-
-import Chating from "./routes/Chating";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, LoginPage, MyProfile, ChatLanding, Chating } from "./routes/index";
 
 function App() {
   return (
     <>
-      {/* <Home /> */}
-      {/* <LoginPage /> */}
-      {/* <MyProfile /> */}
-      {/* <ChatLanding /> */}
-      <Chating />
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/profile" element={<MyProfile />} />
+          <Route path="/chat" element={<ChatLanding />} />
+          <Route path="/chating" element={<Chating />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
