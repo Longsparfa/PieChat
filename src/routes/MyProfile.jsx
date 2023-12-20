@@ -83,10 +83,12 @@ const MyProfile = () => {
         </Link>
       </div>
       <div className="bg-white w-[450px] rounded-[10px] my-4 ">
-        <div className="flex pl-4 pt-4">
-          <img src="images/arrow.png" alt="arrow" />
-          <p className="text-black text-[18px] font-[800] ml-2">Profile</p>
-        </div>
+        <Link to={"/"}>
+          <div className="flex pl-4 pt-4">
+            <img src="images/arrow.png" alt="arrow" />
+            <p className="text-black text-[18px] font-[800] ml-2">Profile</p>
+          </div>
+        </Link>
         <div className="flex justify-center">
           <img src="images/E.png" alt="E" className="w-[80px] " />
         </div>
